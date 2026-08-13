@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>✦ La Noche En Que Tu Ausencia Hizo Eco En Todo Mi Corazón ✦</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   UNIVERSO BASE
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#fff;
+    font-family:'Cormorant Garamond',serif;
+
+    background:
+        radial-gradient(circle at 50% 0%,
+            #b875cf 0%,
+            #693d82 18%,
+            #342044 40%,
+            #130d1d 67%,
+            #030205 100%);
+}
+
+/* =========================================================
+   ATMÓSFERA
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:1000px;
+    height:1000px;
+    top:-650px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255,240,255,.25),
+            rgba(214,166,255,.12) 35%,
+            transparent 70%);
+
+    filter:blur(45px);
+    pointer-events:none;
+    z-index:-20;
+
+    animation:breath 9s ease-in-out infinite;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-10;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.07),
+            transparent 20%,
+            transparent 80%,
+            rgba(0,0,0,.3)
+        );
+}
+
+@keyframes breath{
+    50%{
+        transform:translateX(-50%) scale(1.15);
+        opacity:.7;
+    }
+}
+
+/* =========================================================
+   ESTRELLAS
+========================================================= */
+
+.star{
+    position:fixed;
+    border-radius:50%;
+    background:#fff;
+    pointer-events:none;
+
+    box-shadow:
+        0 0 6px #fff,
+        0 0 14px #fff,
+        0 0 27px #efd5ff;
+
+    animation:twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.15;
+        transform:scale(.55);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+/* =========================================================
+   POLVO DE LUZ
+========================================================= */
+
+.dust{
+    position:fixed;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:#ffeaff;
+    opacity:.3;
+    pointer-events:none;
+
+    animation:floatDust linear infinite;
+}
+
+@keyframes floatDust{
+    from{
+        transform:translateY(110vh) translateX(0);
+    }
+
+    to{
+        transform:translateY(-120vh) translateX(45px);
+    }
+}
+
+/* =========================================================
+   ESTRELLAS FUGACES
+========================================================= */
+
+.shooting{
+    position:fixed;
+    width:230px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,.95),
+            transparent
+        );
+
+    transform:rotate(-32deg);
+    opacity:0;
+    pointer-events:none;
+
+    animation:shoot 15s linear infinite;
+}
+
+@keyframes shoot{
+
+    0%,72%{
+        opacity:0;
+        transform:translate(-500px,-200px) rotate(-32deg);
+    }
+
+    74%{
+        opacity:1;
+    }
+
+    82%{
+        opacity:0;
+        transform:translate(1500px,850px) rotate(-32deg);
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.wrapper{
+    width:100%;
+    max-width:1080px;
+    margin:auto;
+
+    padding:
+        40px 22px
+        100px;
+}
+
+/* =========================================================
+   PORTADA CINEMATOGRÁFICA
+========================================================= */
+
+.hero{
+    min-height:700px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    position:relative;
+}
+
+.moon{
+    position:relative;
+
+    width:190px;
+    height:190px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff,
+            #f7eaff 35%,
+            #dfbff2 63%,
+            #b37bd0 100%
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,255,255,.8),
+        0 0 100px rgba(235,184,255,.45),
+        0 0 190px rgba(208,146,255,.2);
+
+    animation:
+        moonFloat 6s ease-in-out infinite;
+
+    z-index:2;
+}
+
+.moon::before,
+.moon::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(150,105,170,.12);
+}
+
+.moon::before{
+    width:38px;
+    height:38px;
+    top:42px;
+    left:35px;
+}
+
+.moon::after{
+    width:25px;
+    height:25px;
+    right:38px;
+    bottom:45px;
+}
+
+@keyframes moonFloat{
+    50%{
+        transform:translateY(-13px);
+    }
+}
+
+.moon-ring{
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.22);
+
+    box-shadow:
+        0 0 50px rgba(255,220,255,.15);
+
+    animation:ring 8s ease-in-out infinite;
+}
+
+@keyframes ring{
+    50%{
+        transform:scale(1.12) rotate(10deg);
+        opacity:.5;
+    }
+}
+
+.hero-small{
+    margin-top:42px;
+
+    font-family:'Cinzel',serif;
+    font-size:13px;
+    letter-spacing:5px;
+
+    color:#e9d7f1;
+    opacity:.75;
+}
+
+h1{
+    margin-top:25px;
+
+    max-width:850px;
+
+    font-family:'Cinzel',serif;
+    font-size:43px;
+    line-height:1.5;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,.3),
+        0 0 45px rgba(230,170,255,.22);
+
+    animation:titleAppear 2s ease both;
+}
+
+@keyframes titleAppear{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.date{
+    margin-top:25px;
+
+    font-family:'Cinzel',serif;
+    font-size:15px;
+    letter-spacing:3px;
+
+    color:#eadcf2;
+}
+
+.nickname{
+    margin-top:22px;
+
+    font-size:27px;
+    font-style:italic;
+
+    color:#ffeaff;
+
+    text-shadow:
+        0 0 18px rgba(255,205,255,.3);
+}
+
+/* =========================================================
+   LÍNEA DEL DESTINO
+========================================================= */
+
+.destiny{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:14px;
+
+    margin:
+        -15px auto
+        75px;
+
+    color:#ffeaff;
+}
+
+.destiny span{
+    width:120px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,.55),
+            transparent
+        );
+}
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+.card{
+    position:relative;
+
+    padding:
+        72px 70px
+        80px;
+
+    border-radius:45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.35),
+        0 0 110px rgba(205,145,245,.11),
+        inset 0 1px 0 rgba(255,255,255,.1);
+
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+    width:1px;
+    height:100%;
+
+    left:50%;
+    top:0;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+    opacity:.4;
+}
+
+.card::after{
+    content:"✦";
+
+    position:absolute;
+    top:25px;
+    right:32px;
+
+    font-size:25px;
+
+    color:#fff;
+    opacity:.35;
+
+    animation:miniStar 4s ease-in-out infinite;
+}
+
+@keyframes miniStar{
+    50%{
+        transform:rotate(180deg) scale(.7);
+        opacity:.15;
+    }
+}
+
+/* =========================================================
+   CABECERA DE CARTA
+========================================================= */
+
+.letter-head{
+    text-align:center;
+
+    padding-bottom:40px;
+
+    margin-bottom:45px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.13);
+}
+
+.letter-symbol{
+    font-size:35px;
+
+    text-shadow:
+        0 0 15px #fff,
+        0 0 35px #e7baff;
+
+    animation:pulseSymbol 3s ease-in-out infinite;
+}
+
+@keyframes pulseSymbol{
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+.greeting{
+    margin-top:15px;
+
+    font-size:34px;
+    font-weight:600;
+
+    color:#fff;
+}
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+p{
+    position:relative;
+
+    font-size:25px;
+    line-height:2;
+
+    color:#faf8ff;
+
+    text-align:justify;
+
+    margin-bottom:30px;
+}
+
+.first::first-letter{
+    float:left;
+
+    font-family:'Cinzel',serif;
+    font-size:86px;
+    line-height:.78;
+
+    padding-right:12px;
+
+    color:#ffe8ff;
+
+    text-shadow:
+        0 0 18px rgba(255,210,255,.5);
+}
+
+strong{
+    color:#fff;
+
+    font-weight:700;
+
+    text-shadow:
+        0 0 15px rgba(255,215,255,.35);
+}
+
+/* =========================================================
+   FRASES IMPORTANTES
+========================================================= */
+
+.highlight{
+    position:relative;
+
+    margin:
+        50px auto;
+
+    max-width:850px;
+
+    padding:
+        30px 25px;
+
+    text-align:center;
+
+    font-size:29px;
+    line-height:1.7;
+
+    color:#ffeaff;
+
+    border-top:
+        1px solid rgba(255,255,255,.18);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.18);
+
+    text-shadow:
+        0 0 18px rgba(255,200,255,.25);
+}
+
+.highlight::before{
+    content:"✦";
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:16px;
+
+    opacity:.65;
+}
+
+/* =========================================================
+   CORAZÓN LUMINOSO
+========================================================= */
+
+.heart-space{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:180px;
+
+    margin:30px 0;
+}
+
+.heart{
+    font-size:65px;
+
+    filter:
+        drop-shadow(0 0 12px #fff)
+        drop-shadow(0 0 35px #ffbde9);
+
+    animation:
+        heartBeat 2.2s ease-in-out infinite;
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    15%{
+        transform:scale(1.16);
+    }
+
+    30%{
+        transform:scale(1);
+    }
+
+    45%{
+        transform:scale(1.1);
+    }
+}
+
+/* =========================================================
+   SEPARADOR
+========================================================= */
+
+.separator{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:17px;
+
+    margin:55px 0;
+
+    color:#ffeaff;
+    font-size:21px;
+}
+
+.separator::before,
+.separator::after{
+    content:"";
+
+    width:140px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,.55),
+            transparent
+        );
+}
+
+/* =========================================================
+   FINAL APASIONADO
+========================================================= */
+
+.final{
+    margin-top:70px;
+
+    padding:
+        50px 42px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    font-size:26px;
+    line-height:1.9;
+
+    font-style:italic;
+
+    color:#ffeafa;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(216,145,255,.13),
+            rgba(255,255,255,.04),
+            transparent
+        );
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 0 75px rgba(218,155,255,.13),
+        inset 0 1px 0 rgba(255,255,255,.09);
+}
+
+.final strong{
+    color:#fff;
+}
+
+.dedication{
+    display:block;
+
+    margin-top:35px;
+
+    font-family:'Cinzel',serif;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    letter-spacing:1.5px;
+
+    color:#fff;
+}
+
+/* =========================================================
+   FIRMA
+========================================================= */
+
+.signature{
+    margin-top:55px;
+
+    text-align:center;
+
+    font-size:25px;
+    font-style:italic;
+
+    color:#ffeaff;
+}
+
+.signature span{
+    display:block;
+
+    margin-top:13px;
+
+    font-family:'Cinzel',serif;
+
+    font-size:18px;
+    letter-spacing:1px;
+
+    color:#fff;
+}
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.poem-button{
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:max-content;
+    max-width:100%;
+
+    margin:65px auto 10px;
+
+    padding:
+        18px 32px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-family:'Cinzel',serif;
+
+    font-size:15px;
+    letter-spacing:1px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(191,112,255,.2)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.27);
+
+    box-shadow:
+        0 0 30px rgba(224,160,255,.18),
+        inset 0 1px 0 rgba(255,255,255,.14);
+
+    backdrop-filter:blur(14px);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.poem-button:hover{
+    transform:
+        translateY(-5px)
+        scale(1.035);
+
+    box-shadow:
+        0 0 50px rgba(231,174,255,.35);
+}
+
+.poem-button:active{
+    transform:scale(.97);
+}
+
+/* =========================================================
+   ANIMACIÓN DE APARICIÓN
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media(max-width:700px){
+
+    .wrapper{
+        padding:
+            20px 15px
+            65px;
+    }
+
+    .hero{
+        min-height:650px;
+    }
+
+    .moon{
+        width:145px;
+        height:145px;
+    }
+
+    .moon-ring{
+        width:205px;
+        height:205px;
+    }
+
+    .hero-small{
+        font-size:10px;
+        letter-spacing:3px;
+    }
+
+    h1{
+        font-size:27px;
+        line-height:1.55;
+        letter-spacing:1px;
+    }
+
+    .date{
+        font-size:12px;
+        letter-spacing:1.5px;
+    }
+
+    .nickname{
+        font-size:22px;
+    }
+
+    .destiny span{
+        width:65px;
+    }
+
+    .card{
+        padding:
+            43px 23px
+            52px;
+
+        border-radius:30px;
+    }
+
+    .greeting{
+        font-size:28px;
+    }
+
+    p{
+        font-size:21px;
+        line-height:1.9;
+        text-align:left;
+    }
+
+    .first::first-letter{
+        font-size:67px;
+    }
+
+    .highlight{
+        font-size:23px;
+        line-height:1.65;
+        padding:23px 12px;
+        margin:42px auto;
+    }
+
+    .heart-space{
+        height:145px;
+    }
+
+    .heart{
+        font-size:55px;
+    }
+
+    .separator{
+        margin:43px 0;
+    }
+
+    .separator::before,
+    .separator::after{
+        width:55px;
+    }
+
+    .final{
+        padding:
+            35px 22px;
+
+        font-size:22px;
+        line-height:1.85;
+    }
+
+    .dedication{
+        font-size:15px;
+    }
+
+    .signature{
+        font-size:22px;
+    }
+
+    .signature span{
+        font-size:15px;
+    }
+
+    .poem-button{
+        width:100%;
+        padding:17px 18px;
+        font-size:13px;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- =====================================================
+     PORTADA
+===================================================== -->
+
+<section class="hero">
+
+    <div class="moon-ring"></div>
+
+    <div class="moon"></div>
+
+    <div class="hero-small">
+        UNA NOCHE ESCRITA PARA TI
+    </div>
+
+    <h1>
+        ✦ LA NOCHE EN QUE TU AUSENCIA<br>
+        HIZO ECO EN TODO MI CORAZÓN ✦
+    </h1>
+
+    <div class="date">
+        MIÉRCOLES, 12 DE AGOSTO DE 2026
+    </div>
+
+    <div class="nickname">
+        Para ti, mi Lucero de Seda. 🤍
+    </div>
+
+</section>
+
+
+<div class="destiny">
+    <span></span>
+    ✦
+    <span></span>
+</div>
+
+
+<!-- =====================================================
+     CARTA
+===================================================== -->
+
+<section class="card">
+
+    <div class="letter-head">
+
+        <div class="letter-symbol">
+            ✦
+        </div>
+
+        <div class="greeting">
+            Mi Lucero de Seda ❤️
+        </div>
+
+    </div>
+
+
+    <p class="first reveal">
+        Mi amor, hoy fue uno de esos días en los que <strong>tu ausencia se sintió demasiado.</strong> Ya son seis días sin poder verte, y aunque intento hacerme el fuerte y seguir normalmente, la verdad es que <strong>te extraño muchísimo.</strong> 🥺
+    </p>
+
+
+    <p class="reveal">
+        Hoy no pudiste ir al colegio porque estás enferma, y aunque una parte de mí deseaba con todas sus fuerzas encontrarte allí, abrazarte y tenerte cerquita otra vez, otra parte sabe que ahora mismo lo más importante es que descanses y te recuperes. <strong>Prefiero mil veces extrañarte un poquito más antes que verte esforzándote cuando tu cuerpo te está pidiendo descanso.</strong>
+    </p>
+
+
+    <div class="highlight reveal">
+        Prefiero extrañarte un poco más<br>
+        antes que verte luchando contra el dolor.
+    </div>
+
+
+    <p class="reveal">
+        Pero no te voy a mentir, mi vida… <strong>hoy el colegio se sintió diferente.</strong> Estuve solito, y mi desánimo se notó demasiado. Me faltaba esa personita que hace que hasta un día cualquiera tenga algo especial. Me faltaba mirarte, acercarme a ti, compartir cualquier tontería, sentir que estabas ahí. Y quizás por eso <strong>hoy todo pareció un poquito más vacío.</strong>
+    </p>
+
+
+    <p class="reveal">
+        Incluso hubo momentos en los que pensé cuánto quisiera poder ir a visitarte, sentarme a tu lado, cuidarte aunque fuera un rato y decirte personalmente cuánto te extraño. 🥺 Pero no puedo, y eso también me duele. Así que desde aquí solo puedo mandarte todo mi amor, <strong>como si cada palabra pudiera convertirse en un abrazo.</strong>
+    </p>
+
+
+    <div class="heart-space reveal">
+        <div class="heart">🤍</div>
+    </div>
+
+
+    <p class="reveal">
+        Y esta noche solo tengo un deseo: <strong>que mañana despiertes sintiéndote mucho mejor.</strong> Que tu cuerpo haya descansado, que el malestar haya disminuido y que puedas volver a sonreír con esa sonrisa que tanto extraño.
+    </p>
+
+
+    <p class="reveal">
+        Porque sí, mi amor… <strong>quiero volver a verte.</strong> Quiero que estos seis días de distancia terminen. Quiero recuperar nuestras miradas, nuestros momentos, nuestras pequeñas conversaciones y esa cercanía que tanto necesita mi corazón.
+    </p>
+
+
+    <div class="highlight reveal">
+        Seis días pueden parecer poco para el mundo,<br>
+        pero para un corazón que extraña a quien ama,<br>
+        pueden sentirse eternos.
+    </div>
+
+
+    <p class="reveal">
+        Mientras tanto, quédate descansando, mi Lucero de Seda. <strong>No tienes que hacer nada más que cuidarte.</strong> Yo me encargaré de extrañarte por los dos esta noche.
+    </p>
+
+
+    <p class="reveal">
+        Y si pudiera estar contigo ahora mismo, no te pediría nada. Simplemente me quedaría a tu lado, abrazándote despacito, hasta que te sintieras mejor.
+    </p>
+
+
+    <div class="separator">
+        ✦
+        🌙
+        ✦
+    </div>
+
+
+    <p class="reveal">
+        <strong>Te extraño más de lo que hoy pude demostrar, te amo más de lo que cualquier carta podría explicar,</strong> y esta noche, aunque estés lejos, mi corazón sigue acostado cerquita del tuyo.
+    </p>
+
+
+    <div class="highlight reveal">
+        Duerme, mi amor.<br>
+        <strong>Ojalá mañana el día nos regale un poquito de ti otra vez. ❤️</strong>
+    </div>
+
+
+    <p class="reveal">
+        Con todo mi amor,<br>
+        <strong>el que hoy se sintió un poquito perdido porque tú no estabas.</strong>
+    </p>
+
+
+    <!-- =================================================
+         FRASE FINAL
+    ================================================= -->
+
+    <div class="final reveal">
+
+        Si pudiera atravesar esta noche para llegar hasta ti, no llevaría flores ni grandes regalos; <strong>llevaría simplemente mis brazos para envolverte en el abrazo que hoy no pude darte.</strong> Me quedaría junto a ti en silencio, cuidando tus sueños y recordándote bajito cuánto te amo, hasta que el dolor se quedara sin fuerzas para molestarte. Porque incluso cuando no puedo verte, incluso cuando seis días parecen una eternidad y hasta el colegio se siente vacío sin ti, hay algo que jamás cambia: <strong>mi corazón sigue encontrando el camino hacia ti.</strong>
+
+        <span class="dedication">
+            Para VALERIA PETRO VILLAZÓN<br>
+            • MI VIDA ENTERA. ❤️
+        </span>
+
+    </div>
+
+
+    <div class="signature reveal">
+
+        Con todo mi amor...
+
+        <span>
+            EL QUE SIEMPRE VA A VOLVER A TI. ❤️
+        </span>
+
+    </div>
+
+
+    <!-- =================================================
+         BOTÓN AL POEMA
+    ================================================= -->
+
+    <a
+        id="poemButton"
+        class="poem-button"
+        href="#">
+
+        🌙 ✦ Abrir el poema de esta noche ✦ 🌙
+
+    </a>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   ESTRELLAS
+========================================================= */
+
+for(let i = 0; i < 260; i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    const size =
+        Math.random() * 2.7 + .7;
+
+    star.style.width =
+        size + "px";
+
+    star.style.height =
+        size + "px";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    star.style.animationDuration =
+        (Math.random() * 5 + 2) + "s";
+
+    star.style.animationDelay =
+        (Math.random() * 7) + "s";
+
+    document.body.appendChild(star);
+}
+
+
+/* =========================================================
+   POLVO ESTELAR
+========================================================= */
+
+for(let i = 0; i < 120; i++){
+
+    const dust =
+        document.createElement("div");
+
+    dust.className = "dust";
+
+    dust.style.left =
+        Math.random() * 100 + "%";
+
+    dust.style.top =
+        Math.random() * 100 + "%";
+
+    dust.style.animationDuration =
+        (Math.random() * 30 + 18) + "s";
+
+    dust.style.animationDelay =
+        (Math.random() * 20) + "s";
+
+    document.body.appendChild(dust);
+}
+
+
+/* =========================================================
+   ESTRELLAS FUGACES
+========================================================= */
+
+for(let i = 0; i < 5; i++){
+
+    const comet =
+        document.createElement("div");
+
+    comet.className = "shooting";
+
+    comet.style.top =
+        (Math.random() * 50) + "%";
+
+    comet.style.animationDelay =
+        (i * 4.2) + "s";
+
+    document.body.appendChild(comet);
+}
+
+
+/* =========================================================
+   APARICIÓN DE LA CARTA
+========================================================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+/* =========================================================
+   BOTÓN DEL POEMA
+========================================================= */
+
+const poemaDeEstaNoche =
+    "https://j8753741-eng.github.io/Miercoles-12-de-agosto-del-2026---poema/";
+
+document
+    .getElementById("poemButton")
+    .href = poemaDeEstaNoche;
+
+</script>
+
+</body>
+  </html>
